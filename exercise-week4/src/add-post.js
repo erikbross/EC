@@ -23,7 +23,7 @@ postPhoto.addEventListener("click", () => {
 postLocation.addEventListener("click", () => {
     groupLocation.classList.remove("d-none");
     groupPhoto.classList.add("d-none");
-    loadBingAPI(API_KEY);
+    loadBingAPI();
     window.showMap = async () => {
         const coords = await getGeolocation();
         const center = new window.Microsoft.Maps.Location(coords.latitude, coords.longitude);
@@ -38,7 +38,6 @@ postLocation.addEventListener("click", () => {
             const manager = new window.Microsoft.Maps.AutosuggestManager({ map, businessSuggestions: true });
             manager.attachAutosuggest("#place", "#location-container", (result) => {
                 map.setView({ center: result.location });
-                console.log(center);
                 varLatitude = result.location.latitude;
                 varLongitude = result.location.longitude;
             });
@@ -195,4 +194,4 @@ function loadBingAPI() {
     document.body.append(script);
 }
 
-loadBingAPI(API_KEY);
+loadBingAPI();

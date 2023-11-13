@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>User profile | AssBook</title>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css" />
+  <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/regular.css" />
+  <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/solid.css" />
+  <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/fontawesome.css" />
+  <link rel="stylesheet" href="./style.css" />
+  <script src="src/profile.ts" type="module"></script>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">FoodScore</a>
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="add-post.html">New post</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="profile.html">My profile</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#" id="logout">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="row mt-4" id="profile">
+      <div class="col-3">
+        <div>
+          <img class="w-100" id="avatar" src="" alt="" />
+          <label class="btn btn-sm btn-danger">
+            <i class="fa-regular fa-image"></i>
+            <input type="file" id="avatarInput" class="d-none" />
+          </label>
+        </div>
+      </div>
+
+      <div class="col-9" id="profileInfo">
+        <!--  Cambiar h4 por inputs con un botón -->
+        <h4 id="name"></h4>
+        <h4 id="email">
+          <small class="text-muted"></small>
+        </h4>
+        <!-- Añadir campo de modificar password que muestre 2 campos -->
+        <div>
+          <button class="btn btn-primary" id="editProfile">
+            <i class="fa-regular fa-pen-to-square"></i>
+            Edit profile
+          </button>
+          <button class="btn btn-success" id="editPassword">
+            <i class="fa-solid fa-lock"></i>
+            Edit password
+          </button>
+        </div>
+      </div>
+
+      <div class="col-9 d-none" id="profileForm">
+        <form>
+          <div class="mb-3">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" name="email" id="email" placeholder="Email" />
+            <label for="name">Name:</label>
+            <input type="text" class="form-control" name="name" id="name" placeholder="Name" />
+          </div>
+          <button type="submit" class="btn btn-primary">Save changes</button>
+          <button type="button" class="btn btn-danger" id="cancelEditProfile">Cancel</button>
+        </form>
+      </div>
+
+      <div class="col-9 d-none" id="passwordForm">
+        <form>
+          <div class="mb-3">
+            <label for="password">Password:</label>
+            <input type="password" class="form-control" name="password" id="password" placeholder="Password" />
+            <label for="password2">Repeat password:</label>
+            <input type="password" class="form-control" name="password2" id="password2" placeholder="Repeat password" />
+          </div>
+          <button type="submit" class="btn btn-primary">Save changes</button>
+          <button type="button" class="btn btn-danger" id="cancelEditPassword">Cancel</button>
+        </form>
+      </div>
+    </div>
+    <div class="mt-4" id="map"></div>
+  </div>
+</body>
+
+</html>

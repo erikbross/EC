@@ -1,0 +1,44 @@
+<div class="card">
+    <div class="card-header bg-primary text-white">
+        {{title}}
+    </div>
+    <div class="card-block">
+        @if (products.length) {
+        <div class="table-responsive">
+            <table class="table table-striped m-0">
+                <thead>
+                    <tr>
+                        <th>
+                            <button class="btn btn-sm" [ngClass]="{
+                                'btn-danger': this.showImage,
+                                'btn-primary': !this.showImage,
+                                }" (click)="toggleImage()">
+                                {{showImage?'Hide':'Show'}} images
+                            </button>
+                        </th>
+                        <th>{{headers.description}}</th>
+                        <th>{{headers.price}}</th>
+                        <th>{{headers.available}}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (product of products; track product.id; let even = $even) {
+                    <tr [ngClass]="{'even': even}">
+                        <td>
+                            @if (showImage){
+                                <img [src]="product.imageUrl" alt="">
+                            }
+                        </td>
+                        <td>{{product.description}}</td>
+                        <td>{{product.price}}</td>
+                        <td>{{product.available}}</td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        } @else {
+        <h3 class="p-4">No hay productos disponibles</h3>
+        }
+    </div>
+</div>

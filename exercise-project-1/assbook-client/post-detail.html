@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Post Detail | AssBook</title>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/regular.css">
+  <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/fontawesome.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="src/post-detail.ts" type="module"></script>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">AssBook Lite</a>
+      <ul class="navbar-nav me-auto mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="add-post.html">New post</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="profile.html">My profile</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#" id="logout">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div id="cardContainer" class="mt-4">
+      <!-- POST'S CARD -->
+    </div>
+
+    <ul class="list-group mt-4 mb-4" id="comments">
+      <li class="list-group-item active">Comments</li>
+      <!-- <li class="list-group-item d-flex flex-row">
+          <img class="rounded-circle align-self-start me-3" src="img/avatar.png" alt="">
+          <div>
+            <div><strong>User's name: </strong>Comment text....</div>
+            <div><small class="text-muted">10/20/2018 5:26 PM</small></div>
+          </div>
+        </li> -->
+    </ul>
+
+    <form class="mt-4" id="commentForm">
+      <div class="mb-3">
+        <textarea class="form-control" name="comment" id="comment" placeholder="Write a comment"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary mt-3">Send</button>
+      <a href="index.html" class="btn btn-danger mt-3">Go back</button>
+    </form>
+</body>
+
+</html>
