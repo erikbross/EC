@@ -31,7 +31,7 @@ function ShowPosts() {
             else if (mood == 2) {
                 divCard.className = "card mb-4 border-danger shadow";
             }
-
+            
             let imgCard = document.createElement("img");
             imgCard.className = "card-img-top";
             imgCard.src = img.src;
